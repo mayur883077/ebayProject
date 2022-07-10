@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import Utilclasses.utilClass;
 
-public class loginPage extends utilClass {
+public class loginPage extends utilClass  {
 WebDriver driver;
 @FindBy(xpath="//a[text()='Sign in']")
 private WebElement signInButton;

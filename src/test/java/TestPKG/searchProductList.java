@@ -1,6 +1,10 @@
 package TestPKG;
+import java.awt.GraphicsConfiguration;
+import java.awt.Rectangle;
+import java.io.File;
 import java.io.IOException;
 
+import org.monte.media.Format;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -18,11 +22,13 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import POMClass.homePage;
 import POMClass.productPage;
+import Utilclasses.ScreenRecorderUtil;
 import baseClass.BaseClass;
 import listenerClasess.listenerClass;
 
 
 @Listeners(listenerClass.class)
+
 public class searchProductList {
 
 		WebDriver driver;
@@ -36,10 +42,10 @@ public class searchProductList {
 		@BeforeClass
 		public void beforeClass()
 		{
-			htmlReporter = new ExtentHtmlReporter("VerifyUserAddFunds.html");
+			htmlReporter = new ExtentHtmlReporter("SearchProductList.html");
 		 report = new ExtentReports();
 		report.attachReporter(htmlReporter);
-		test = report.createTest("VerifyUserAddFund");
+		test = report.createTest("SearchProductList");
 			driver = BaseClass.getDriver("edge");
 		}
 		@BeforeMethod
@@ -52,9 +58,10 @@ public class searchProductList {
 		@Test
 		public void searchList() throws IOException, Exception
 		{
+			ScreenRecorderUtil.startRecord("searchList");
 			hp.enterText();
 			pp.listOfSearchProduct();
-			
+			ScreenRecorderUtil.stopRecord();
 		}
 		
 		@AfterMethod
@@ -75,6 +82,7 @@ public class searchProductList {
 		
     @AfterClass
     public void afterClass() {
+    	report.flush();
     	driver.quit();
     }
 	}

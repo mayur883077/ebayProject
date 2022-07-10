@@ -47,7 +47,7 @@ public class registrationPage extends utilClass {
 		lastName.sendKeys(getExcelData(1, 0));
 		emailID.sendKeys(getExcelData(2, 0));
 		password.sendKeys(getExcelData(3, 0));
-		Thread.sleep(1000);
+		Thread.sleep(10000);
 		explicitWait(driver, clickOnRegisterButton).click();
 	
 		

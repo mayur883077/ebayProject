@@ -38,9 +38,10 @@ public class productPage extends utilClass {
 			explicitWait(driver, clickOnProduct);
 			List <WebElement> product = driver.findElements(By.xpath("//h3[@class='s-item__title']"));
 			product.size();
-			for(int i=0; i<product.size(); i++)
+			for(int i=0; i<=10; i++)
 			{
-			writeDataInExcel(product.get(i).getText(), i, 2);
+				System.out.println(product.get(i).getText());
+			writeDataInExcel().createRow(i).createCell(2).setCellValue(product.get(i).getText());
 			
 			}
 		}

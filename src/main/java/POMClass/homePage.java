@@ -11,7 +11,7 @@ import Utilclasses.utilClass;
 
 public class homePage extends utilClass {
 	WebDriver driver;
-	@FindBy(xpath="//b[text()='Mayur']")
+	@FindBy(xpath="//b[text()='Ramdas']")
 	private WebElement userName;
     @FindBy(xpath="//input[@type='text']")
 	private WebElement inputText;
@@ -28,13 +28,14 @@ public class homePage extends utilClass {
 	}
 	
 public Boolean isSuccessfullyLogin() throws IOException, Exception {
-
+	
+explicitWait(driver, userName);
 	return userName.isDisplayed();
 
 }
 public void enterText() throws IOException, Exception
 {
-	
+	explicitWait(driver,inputText);
 	inputText.sendKeys(getExcelData(0, 1));
 	enterButton.click();
 	

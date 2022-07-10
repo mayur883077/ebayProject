@@ -22,6 +22,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import POMClass.homePage;
 import POMClass.loginPage;
 import POMClass.productPage;
+import Utilclasses.ScreenRecorderUtil;
 import baseClass.BaseClass;
 import listenerClasess.listenerClass;
 @Listeners(listenerClass.class)
@@ -38,10 +39,10 @@ public class verifyUserCanLogin {
 	@BeforeClass
 	public void beforeClass()
 	{
-		htmlReporter = new ExtentHtmlReporter("VerifyUserAddFunds.html");
+		htmlReporter = new ExtentHtmlReporter("verifyUserCanLogin.html");
 	 report = new ExtentReports();
 	report.attachReporter(htmlReporter);
-	test = report.createTest("VerifyUserAddFund");
+	test = report.createTest("verifyUserCanLogin");
 		driver = BaseClass.getDriver("edge");
 	}
 	
@@ -53,9 +54,11 @@ public class verifyUserCanLogin {
 	}
 	@Test
 	public void verifyUserOnLoginPage() throws IOException, Exception {
+		ScreenRecorderUtil.startRecord("verifyUserOnLoginPage");
 		lp.clickOnSignIn();
 		lp.insertData();
 		Assert.assertTrue(hp.isSuccessfullyLogin());
+		ScreenRecorderUtil.stopRecord();
 	}
 	@AfterMethod
 	public void afterMethod(ITestResult result) throws IOException {
@@ -75,6 +78,7 @@ public class verifyUserCanLogin {
 	
 @AfterClass
 public void afterClass() {
+	report.flush();
 	driver.quit();
 }
 

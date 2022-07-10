@@ -23,6 +23,7 @@ import POMClass.firstProductInfoPage;
 import POMClass.homePage;
 import POMClass.loginPage;
 import POMClass.productPage;
+import Utilclasses.ScreenRecorderUtil;
 import baseClass.BaseClass;
 import listenerClasess.listenerClass;
 
@@ -32,7 +33,7 @@ public class verifyUserCanAddToCart {
 	
 		
 		WebDriver driver;
-		homePage mp;
+		homePage hp;
 		productPage pp;
 		firstProductInfoPage fip;
 		cartPage cp;
@@ -45,16 +46,16 @@ public class verifyUserCanAddToCart {
 		@BeforeClass
 		public void beforeClass()
 		{
-			htmlReporter = new ExtentHtmlReporter("VerifyUserAddFunds.html");
+			htmlReporter = new ExtentHtmlReporter("verifyUserCanAddToCart.html");
 		 report = new ExtentReports();
 		report.attachReporter(htmlReporter);
-		test = report.createTest("VerifyUserAddFund");
+		test = report.createTest("verifyUserCanAddToCart");
 			driver = BaseClass.getDriver("edge");
 		}
 		@BeforeMethod
 		public void beforeMethod()
 		{
-			mp = new homePage(driver);
+			hp = new homePage(driver);
 			pp = new productPage(driver);
 			fip = new firstProductInfoPage(driver);
 			cp = new cartPage(driver);
@@ -63,12 +64,12 @@ public class verifyUserCanAddToCart {
 		@Test
 		public void productAddToCart() throws IOException, Exception
 		{
-			lp.clickOnSignIn();
-			lp.insertData();
-			mp.enterText();
+			ScreenRecorderUtil.startRecord("productAddToCart");
+			hp.enterText();
 			pp.clickOnFirstProduct();
 			fip.clickOnAddToCart();
-			Assert.assertEquals("Realme", cp.cartProductName());
+			Assert.assertTrue(cp.cartProductName());
+			ScreenRecorderUtil.stopRecord();
 		}
 		@AfterMethod
 		public void afterMethod(ITestResult result) throws IOException {
@@ -88,6 +89,7 @@ public class verifyUserCanAddToCart {
 		
     @AfterClass
     public void afterClass() {
+    	report.flush();
     	driver.quit();
     }
 	}

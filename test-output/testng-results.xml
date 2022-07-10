@@ -1,99 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-07-08T12:35:50 IST" name="Default suite" finished-at="2022-07-08T12:37:16 IST" duration-ms="85597">
+  <suite started-at="2022-07-10T19:21:10 IST" name="Default suite" finished-at="2022-07-10T19:22:23 IST" duration-ms="72328">
     <groups>
     </groups>
-    <test started-at="2022-07-08T12:35:50 IST" name="Default test" finished-at="2022-07-08T12:37:16 IST" duration-ms="85597">
-      <class name="TestPKG.verifyUserCanLogin">
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:TestPKG.verifyUserCanLogin@7d4f9aae]" started-at="2022-07-08T12:35:50 IST" name="beforeClass" finished-at="2022-07-08T12:36:09 IST" duration-ms="19056" status="PASS">
+    <test started-at="2022-07-10T19:21:10 IST" name="Default test" finished-at="2022-07-10T19:22:23 IST" duration-ms="72328">
+      <class name="TestPKG.verifyUserCanAddToCart">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:TestPKG.verifyUserCanAddToCart@242b836]" started-at="2022-07-10T19:21:10 IST" name="beforeClass" finished-at="2022-07-10T19:21:27 IST" duration-ms="16677" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestPKG.verifyUserCanLogin@7d4f9aae]" started-at="2022-07-08T12:36:09 IST" name="beforeMethod" finished-at="2022-07-08T12:36:10 IST" duration-ms="198" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestPKG.verifyUserCanAddToCart@242b836]" started-at="2022-07-10T19:21:27 IST" name="beforeMethod" finished-at="2022-07-10T19:21:28 IST" duration-ms="565" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="verifyUserOnLoginPage()[pri:0, instance:TestPKG.verifyUserCanLogin@7d4f9aae]" started-at="2022-07-08T12:36:10 IST" name="verifyUserOnLoginPage" finished-at="2022-07-08T12:37:16 IST" duration-ms="66079" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //input[@id= 'userid']' (tried for 60 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //input[@id= 'userid']' (tried for 60 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-at Utilclasses.utilClass.explicitWait(utilClass.java:29)
-at POMClass.loginPage.insertData(loginPage.java:36)
-at TestPKG.verifyUserCanLogin.verifyUserOnLoginPage(verifyUserCanLogin.java:36)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id= 'userid']"}
-  (Session info: MicrosoftEdge=103.0.1264.44)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.2.0', revision: '86eb611648'
-System info: host: 'DESKTOP-5M61TFS', ip: '192.168.0.110', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.14'
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [7240344b6a93b55fbea6564e3f94163a, findElement {using=xpath, value=//input[@id= 'userid']}]
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 103.0.1264.44, javascriptEnabled: true, ms:edgeOptions: {debuggerAddress: localhost:51111}, msedge: {msedgedriverVersion: 103.0.1264.49 (abaa9303c229..., userDataDir: C:\Users\mayur\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51111/devtoo..., se:cdpVersion: 103.0.1264.44, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 7240344b6a93b55fbea6564e3f94163a
-at jdk.internal.reflect.GeneratedConstructorAccessor15.newInstance(Unknown Source)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:566)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:384)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:376)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-at com.sun.proxy.$Proxy16.isDisplayed(Unknown Source)
-at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:307)
-at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:40)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:293)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
-... 31 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        <test-method signature="productAddToCart()[pri:0, instance:TestPKG.verifyUserCanAddToCart@242b836]" started-at="2022-07-10T19:21:28 IST" name="productAddToCart" finished-at="2022-07-10T19:22:18 IST" duration-ms="49892" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyUserOnLoginPage -->
-      </class> <!-- TestPKG.verifyUserCanLogin -->
+        </test-method> <!-- productAddToCart -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:TestPKG.verifyUserCanAddToCart@242b836]" started-at="2022-07-10T19:22:18 IST" name="afterMethod" finished-at="2022-07-10T19:22:18 IST" duration-ms="64" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=productAddToCart status=SUCCESS method=verifyUserCanAddToCart.productAddToCart()[pri:0, instance:TestPKG.verifyUserCanAddToCart@242b836] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:TestPKG.verifyUserCanAddToCart@242b836]" started-at="2022-07-10T19:22:18 IST" name="afterClass" finished-at="2022-07-10T19:22:23 IST" duration-ms="5023" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- TestPKG.verifyUserCanAddToCart -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
