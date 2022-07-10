@@ -1,5 +1,7 @@
 package POMClass;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,10 +22,13 @@ public class cartPage extends utilClass {
 			this.driver = driver;
 
 		}
-		public String cartProductName()
+		public Boolean cartProductName() throws IOException, Exception
 		{
 			explicitWait(driver, isVisible);
-			return isVisible.getText();
+			if(getExcelData(1, 1).contains(isVisible.getText().trim())) {
+				
+			}
+			return true;
 		}
 
 	}

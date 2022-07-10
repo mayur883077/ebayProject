@@ -22,6 +22,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import POMClass.productPage;
 import POMClass.registrationPage;
+import Utilclasses.ScreenRecorderUtil;
 import baseClass.BaseClass;
 import listenerClasess.listenerClass;
 @Listeners(listenerClass.class)
@@ -37,10 +38,10 @@ public class VerifyNewUserCanRegister {
 	@BeforeClass
 	public void beforeClass()
 	{
-		htmlReporter = new ExtentHtmlReporter("VerifyUserAddFunds.html");
+		htmlReporter = new ExtentHtmlReporter("VerifyNewUserCanRegister.html");
 	 report = new ExtentReports();
 	report.attachReporter(htmlReporter);
-	test = report.createTest("VerifyUserAddFund");
+	test = report.createTest("VerifyNewUserCanRegister");
 		driver = BaseClass.getDriver("edge");
 	}
 	
@@ -53,10 +54,11 @@ public class VerifyNewUserCanRegister {
 	@Test
 	public void userCanAddData() throws IOException, Exception {
 		
+		ScreenRecorderUtil.startRecord("userCanAddData");
 		rp.clickOnRegister();
 	//	Assert.assertTrue(rp.isOnRegistrationPage());
 		rp.insertRegisterData();
-		
+		ScreenRecorderUtil.stopRecord();
 	}
 	@AfterMethod
 	public void afterMethod(ITestResult result) throws IOException {
@@ -76,6 +78,7 @@ public class VerifyNewUserCanRegister {
 	
 @AfterClass
 public void afterClass() {
+	report.flush();
 	driver.quit();
 }
 }

@@ -9,7 +9,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class firstProductInfoPage {
+import Utilclasses.utilClass;
+
+public class firstProductInfoPage extends utilClass{
 	
 WebDriver driver;
 	
@@ -24,7 +26,7 @@ WebDriver driver;
 	}
 	public void clickOnAddToCart()
 	{
-	
+	explicitWait(driver, addToCart);
 		addToCart.click();
 	}
 

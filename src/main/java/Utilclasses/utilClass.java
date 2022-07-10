@@ -33,9 +33,10 @@ public class utilClass {
 		String data = sheet.getRow(j).getCell(k).getStringCellValue();
 		return data;
 	}	
-	 public static Sheet writeDataInExcel(String c, int a,int b) throws IOException {
+	 public static Sheet writeDataInExcel() throws IOException {
 		FileOutputStream file1 = new FileOutputStream("src\\main\\resources\\TestData\\ebayData.xlsx");
 		src.write(file1);
+		 sheet = src.getSheet("Sheet2");
 
 		 return sheet;
 		 
